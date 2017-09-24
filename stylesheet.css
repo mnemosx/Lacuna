@@ -1,0 +1,657 @@
+@font-face {
+    font-family: 'ovoregular';
+    src: url('fonts/ovo-regular-webfont.woff') format('woff'),
+         url('fonts/ovo-regular-webfont.ttf') format('truetype'),
+         url('fonts/ovo-regular-webfont.svg#ovoregular') format('svg');
+}
+@font-face {
+    font-family: 'muliextrabold';
+    src: url('fonts/muli-extrabold-webfont.woff') format('woff'),
+         url('fonts/muli-extrabold-webfont.ttf') format('truetype'),
+         url('fonts/muli-extrabold-webfont.svg#muliextrabold') format('svg');
+}
+@font-face {
+    font-family: 'mulilight';
+    src: url('fonts/muli-light-webfont.woff') format('woff'),
+         url('fonts/muli-light-webfont.ttf') format('truetype'),
+         url('fonts/muli-light-webfont.svg#mulilight') format('svg');
+}
+@font-face {
+    font-family: 'muliregular';
+    src: url('fonts/muli-regular-webfont.woff') format('woff'),
+         url('fonts/muli-regular-webfont.ttf') format('truetype'),
+         url('fonts/muli-regular-webfont.svg#muliregular') format('svg');
+}
+
+ /* -------------------------------------------------
+   --------------------------------------------------
+                          RESETS
+   --------------------------------------------------
+   -------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  outline: none;
+}
+html,
+body {
+  height: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------
+  --------------------------------------------------
+                        HEADER
+  --------------------------------------------------
+  -------------------------------------------------- */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+.logo-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: auto;
+}
+.logo {
+  width: 90px;
+}
+.logo-text {
+  margin-left: 10px;
+}
+.logo-name {
+  font-family: 'ovoregular';
+  font-size: 2.6em;
+  width: 100%;
+  line-height: .8;
+  color: #315879;
+}
+.slogan {
+  font-family: 'muliregular';
+  width: 100%;
+  font-size: .8em;
+  color: rgba(39, 61, 80, 0.73);
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+nav li {
+  font-family: 'muliregular';
+  margin: 10px;
+  padding: 5px;
+}
+.login-btn {
+  align-self: center;
+  border: none;
+  font-family: 'mulilight';
+  background-color: #fff;
+  cursor: pointer;
+  height: 20px;
+  border-bottom: 1px solid rgba(16, 16, 16, 0.46);
+}
+nav li a {
+  position: relative;
+  color: #537390;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+nav li a::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: transparent;
+  content: '•';
+  text-shadow: 0 0 transparent;
+  font-size: 1.2em;
+  -webkit-transition: text-shadow 0.3s, color 0.3s;
+  -moz-transition: text-shadow 0.3s, color 0.3s;
+  transition: text-shadow 0.3s, color 0.3s;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+nav li a:hover {
+  color: #343045;
+}
+nav li a:hover::before,
+nav li a:focus::before {
+  color: #b1b1b1;
+  text-shadow: 10px 0 #b1b1b1, -10px 0 #b1b1b1;
+}
+
+.modal-container {
+  transition: background 0.3s ease-in;
+}
+.modal-btn {
+  padding-bottom: 2px;
+  margin-left: auto;
+  border-bottom: 1px solid #000;
+  font-family: 'mulilight';
+}
+.modal-btn:hover {
+  cursor: pointer;
+}
+.modal-content:before {
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  width: 0;
+  height: 0;
+  border-radius: 4px;
+  content: '';
+  border-bottom: solid 20px rgba(226, 226, 226, 0.42);;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+}
+.modal-content,
+.modal-backdrop {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+ /* overflow: hidden;*/
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal-close {
+  color: #aaa;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding-top: 3px;
+  background: rgba(226, 226, 226, 0);
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+.modal-close:hover {
+  color: #333;
+}
+.modal-content-btn {
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  bottom: 20px;
+  right: 30px;
+  background: #446CB3;
+  color: #fff;
+  width: 50px;
+  border-radius: 2px;
+  font-size: 14px;
+  height: 32px;
+  padding-top: 9px;
+  font-weight: normal;
+}
+.modal-content-btn:hover {
+  color: #fff;
+  background: #365690;
+}
+#modal-toggle {
+  display: none;
+}
+#modal-toggle.active ~ .modal-backdrop, #modal-toggle:checked ~ .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+#modal-toggle.active ~ .modal-content, #modal-toggle:checked ~ .modal-content {
+  opacity: 1;
+  background-color: #f0f8ff;
+  max-width: 400px;
+  width: 300px;
+  height: 220px;
+  padding: 10px 30px;
+  position: fixed;
+  right: calc((100% - 1200px) / 2);
+  top: 100px;
+  border-radius: 4px;
+  z-index: 9999;
+  pointer-events: auto;
+  cursor: auto;
+  visibility: visible;
+  box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.31);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+input[type='text'], input[type='password'], .login-btn {
+  height: 40px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'muliregular';
+  font-size: 1em;
+  color: #315879
+}
+.login-form input[type='text'] {
+  background: url(media/user.svg) no-repeat right 10px center #fff;
+  background-size: 20px;
+  padding-left: 10px;
+  margin-top: 0;
+}
+.login-form input[type='password'] {
+  background: url(media/password.svg) no-repeat right 10px center #fff;
+  background-size: 20px;
+  padding-left: 10px;
+}
+.login-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #315879;
+  color: #fff;
+  font-size: 1.2em;
+}
+input::placeholder {
+  font-size: 1.2em;
+  color: rgba(49, 88, 121, 0.6);
+}
+input:-ms-input-placeholder {
+  font-size: 1.2em;
+  color: rgba(49, 88, 121, 0.6);
+}
+
+/* --------------------------------------------------
+  --------------------------------------------------
+                  SAKUMS
+  --------------------------------------------------
+  -------------------------------------------------- */
+
+/* SLIDER */
+
+.slider-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 400px;
+}
+
+.slider-wrapper .slider {
+  height: 100%;
+  white-space: nowrap;
+  font-size: 0;
+  transition: 0.8s;
+}
+
+/* SLIDES */
+
+.slider-wrapper .slider>* {
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+  background: none 50% no-repeat;
+  background-size: cover;
+}
+
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.slider-wrapper .prevNext {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 100%;
+  height: 0;
+}
+
+.slide-prev {
+  background: url(media/Slider/left.svg) center no-repeat;
+}
+.slide-next {
+  background: url(media/Slider/right.svg) center no-repeat;
+}
+
+.slider-wrapper .prevNext>div+div {
+  visibility: hidden;
+  /* Hide all but first P/N container */
+}
+
+.slider-wrapper .prevNext a {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  opacity: .5;
+  -webkit-transform: translateY( -50%);
+  transform: translateY( -50%);
+}
+
+.slider-wrapper .prevNext a:hover {
+  opacity: 1;
+}
+
+.slider-wrapper .prevNext a+a {
+  right: 0px;
+}
+
+/* NAVIGATION */
+
+.slider-wrapper .bullets {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.slider-wrapper .bullets > a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 1);
+}
+
+.slider-wrapper .bullets > a+a {
+  background: rgba(255,255,255,0.5); /* Dim all but first */
+}
+
+.slider-wrapper .bullets > a:hover {
+  background: rgba(0,255,255,0.9);
+}
+
+/* ACTIVE NAVIGATION ANCHOR */
+.slider-wrapper >s:target ~ .bullets >* { background: rgba(255,255,255,0.5); }
+#s1:target ~ .bullets >*:nth-child(1){ background: rgba(255,255,255,  1); }
+#s2:target ~ .bullets >*:nth-child(2){ background: rgba(255,255,255,  1); }
+#s3:target ~ .bullets >*:nth-child(3){ background: rgba(255,255,255,  1); }
+#s4:target ~ .bullets >*:nth-child(4){ background: rgba(255,255,255,  1); }
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+.slider-wrapper >s:target ~ .prevNext >* { visibility:  hidden; }
+#s1:target ~ .prevNext >*:nth-child(1){ visibility: visible; }
+#s2:target ~ .prevNext >*:nth-child(2){ visibility: visible; }
+#s3:target ~ .prevNext >*:nth-child(3){ visibility: visible; }
+#s4:target ~ .prevNext >*:nth-child(4){ visibility: visible; }
+
+/* SLIDER ANIMATION POSITIONS */
+#s1:target ~ .slider{ transform: translateX(   0%); -webkit-transform: translateX(   0%); }
+#s2:target ~ .slider{ transform: translateX(-100%); -webkit-transform: translateX(-100%); }
+#s3:target ~ .slider{ transform: translateX(-200%); -webkit-transform: translateX(-200%); }
+#s4:target ~ .slider{ transform: translateX(-300%); -webkit-transform: translateX(-300%); }
+
+
+
+/* -------------------------------------------------
+  --------------------------------------------------
+                      KONTAKTI
+  --------------------------------------------------
+  -------------------------------------------------- */
+
+.page-name {
+  display: block;
+  text-align: center;
+  font-family: 'ovoregular';
+  font-size: 2.4em;
+  margin: 30px 0;
+  color: #1f486a;
+}
+.map {
+  background: url(media/karte.png) no-repeat bottom;
+  height: 500px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.map-contacts {
+  width: 350px;
+  padding: 10px 20px 20px;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.88);
+  padding: 10px 20px 20px;
+  font-family: 'muliregular';
+}
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1.0, 1.0);
+}
+.social-icons img:hover {
+  animation: spin .5s linear;
+}
+.social-icons img {
+  height: 30px;
+  margin-right: 20px;
+  /*  vvv At least one of these properties should solve blurring issue. vvv */
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1.0, 1.0);
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  image-rendering: optimizeSpeed;             
+  image-rendering: -moz-crisp-edges;          
+  image-rendering: -o-crisp-edges;            
+  image-rendering: -webkit-optimize-contrast; 
+  image-rendering: optimize-contrast;         
+  -ms-interpolation-mode: nearest-neighbor;
+}
+@keyframes spin { 
+  30% {transform:rotate(10deg);}
+  60% {transform:rotate(-10deg);}
+  100% {transform:rotate(0deg);} 
+}
+
+.form-section {
+  background: url(media/texture.svg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 10px auto;
+}
+.form-field {
+  width: 60%;
+  border-radius: 4px;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+.form-field h2 {
+  display: inline-block;
+  margin: 30px 0;
+  font-family: 'ovoregular';
+  font-size: 2em;
+  color: #1f486a;
+}
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+.contact-form input {
+  width: 48%;
+  padding-left: 10px;
+}
+.contact-form textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 30px;
+  padding: 10px;
+  border: none;
+  font-family: 'muliregular';
+  font-size: 1.2em;
+  color: #315879;
+}
+.submit-form-btn {
+  cursor: pointer;
+  background: #446CB3;
+  color: #fff;
+  width: 100px;
+  margin: 30px 0;
+  border-radius: 4px;
+  border: none;
+  font-size: 1.1em;
+  font-family: "muliregular";
+  height: 40px;
+}
+.submit-form-btn:hover {
+  color: #fff;
+  background: #365690;
+}
+
+/* -------------------------------------------------
+  --------------------------------------------------
+                      FOOTER
+  --------------------------------------------------
+  -------------------------------------------------- */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  height: 200px;
+  font-family: 'muliregular';
+}
+.footer-left {
+  width: 20%;
+}
+footer .logo {
+  width: 60px;
+}
+footer .logo-name {
+  font-size: 2.2em;
+}
+footer .slogan {
+  font-size: .7em
+}
+.copr {
+  display: inline-block;
+  font-size: .8em;
+  margin-top: 7px;
+}
+footer nav ul {
+  flex-direction: column;
+}
+footer nav ul {
+  margin: 20px 0;
+}
+footer nav li {
+  margin: 0 5px 0 0;
+  padding: 0;
+}
+footer nav li a::before {
+  content: none;
+}
+.footer-middle {
+  width: 30%;
+}
+.footer-middle ul, .map-contacts ul {
+ list-style: none;
+}
+.footer-middle ul li, .map-contacts > ul li {
+  background: url(media/password.svg) no-repeat left center;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.footer-middle ul li:first-child, .map-contacts > ul li:first-child {
+  background: url(media/map.svg) no-repeat left center;
+}
+.footer-middle ul li:nth-child(2), .map-contacts > ul li:nth-child(2) {
+  background: url(media/phone.svg) no-repeat left center;
+}
+.footer-middle ul li:last-child, .map-contacts > ul li:last-child {
+  background: url(media/web.svg) no-repeat left center;
+}
+.footer-right {
+  width: 30%;
+}
+.moto {
+  font-family: 'ovoregular';
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+footer figcaption {
+  float: right;
+  margin-top: 10px;
+}
+
+/* -------------------------------------------------
+  --------------------------------------------------
+                  MEDIA QUERIES
+  --------------------------------------------------
+  -------------------------------------------------- */
+
+@media (max-width: 400px) {
+  #modal-toggle.active ~ .modal-content, #modal-toggle:checked ~ .modal-content {
+    left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

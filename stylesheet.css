@@ -64,6 +64,7 @@ a {
   -------------------------------------------------- */
 
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,7 +120,7 @@ nav li {
 }
 nav li a {
   position: relative;
-  color: #537390;
+  color: #395d7e;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   transition: color 0.3s;
@@ -150,8 +151,13 @@ nav li a:focus::before {
   text-shadow: 10px 0 rgba(140, 144, 229, 0.58), -10px 0 rgba(140, 144, 229, 0.58);
 }
 
+/*  login  */
+
 .modal-container {
   transition: background 0.3s ease-in;
+  position: absolute;
+  right: 285px;
+  top: 100px;
 }
 .modal-btn {
   padding-bottom: 2px;
@@ -243,9 +249,7 @@ nav li a:focus::before {
   width: 300px;
   height: 220px;
   padding: 10px 30px;
-  position: fixed;
-  right: calc((100% - 1200px) / 2);
-  top: 100px;
+  position: absolute; /*ja seit nonem absolute un container uzliek left -10px, paradas horizontal scroll bar*/
   border-radius: 4px;
   z-index: 9999;
   pointer-events: auto;
@@ -297,7 +301,6 @@ textarea::-ms-placeholder {
   color: rgba(49, 88, 121, 0.5);
   font-size: .9em;
 }
-
 input:-ms-input-placeholder {
   font-size: 1.1em;
   color: rgba(49, 88, 121, 0.5);
@@ -305,7 +308,7 @@ input:-ms-input-placeholder {
 
 /* --------------------------------------------------
   --------------------------------------------------
-                  SAKUMS
+                        SAKUMS
   --------------------------------------------------
   -------------------------------------------------- */
 
@@ -490,7 +493,6 @@ input:-ms-input-placeholder {
   margin: 70px auto;
   width: 90%;
   max-width: 1200px;
-  height: 270px;
   flex-wrap: wrap;
 }
 .intro-home h1 {
@@ -499,7 +501,8 @@ input:-ms-input-placeholder {
   font-family: 'Raleway';
   font-weight: 700;
   font-size: 1.5em;
-  margin-bottom: 30px;
+  color: #315879;
+  margin-bottom: 60px;
 }
 .intro-home div {
   width: 30%;
@@ -530,7 +533,7 @@ input:-ms-input-placeholder {
   height: 270px;
 }
 .about-author-picture {
-  max-height: 100%;
+  max-height: 110%;
   object-fit: contain;
   margin-right: 20px;
 }
@@ -538,6 +541,7 @@ input:-ms-input-placeholder {
   font-family: 'Raleway';
   font-weight: 700;
   font-size: 1.5em;
+  color: #315879;
   line-height: 2;
 }
 .about-author-text {
@@ -546,14 +550,24 @@ input:-ms-input-placeholder {
 }
 
 /* -------------------------------------------------
-                    about author
+                    get news
 -------------------------------------------------- */
 
 .piesakies-home-wrap {
   width: 100%;
   margin: 0 auto;
-  height: 400px;
-  background: url(media/texture.svg);
+  height: 500px;
+  background-image: 
+    /*linear-gradient (
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 0) 90%,
+      rgba(255, 255, 255, 1) 100%
+    ),*/
+    url(media/texture.svg);
+  background-size: auto 100%;
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -567,7 +581,7 @@ input:-ms-input-placeholder {
 .piesakies-home h1 {
   text-align: center;
   font-family: 'Raleway';
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.5em;
   color: #315879;
   margin: 20px 0;
@@ -596,13 +610,62 @@ input:-ms-input-placeholder {
   outline: none;
   background-color: #315879;
   color: rgb(255, 255, 255);
-  font-family: 'ovoregular';
+  font-family: 'Raleway';
   font-size: 1.3em;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
+
+/* -------------------------------------------------
+                    mus atbalsta
+-------------------------------------------------- */
+
+.mus-atbalsta {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+.mus-atbalsta h1 {
+  text-align: center;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #315879;
+  margin: 0 0 70px;
+}
+.mus-atbalsta-icons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+
+hr {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 80px auto;
+  height: 0;
+  width: 10%;
+  max-height: 0;
+  font-size: 1px;
+  line-height: 0;
+  border: none;
+  border-top: 7px solid #315879;
+}
+hr:nth-of-type(2){
+  margin-bottom: 0;
+}
+hr:nth-of-type(3){
+  margin-top: 0;
+}
+hr:nth-of-type(4){
+  margin-bottom: 40px;
+}
 
 /* -------------------------------------------------
   --------------------------------------------------
@@ -669,18 +732,18 @@ input:-ms-input-placeholder {
 }
 
 .form-section {
-  background: url(media/texture.svg) no-repeat center;
-  background-size: cover;
+  background: url(media/texture.svg) repeat;
+  background-size: auto 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 600px;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   margin: 10px auto;
 }
 .form-field {
-  width: 60%;
+  width: 70%;
+  max-width: 700px;
   border-radius: 4px;
   background-color: #f0f8ff;
   text-align: center;
@@ -752,10 +815,9 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 90%;
   max-width: 1200px;
-  height: 200px;
   font-family: 'Raleway';
 }
 .footer-left {

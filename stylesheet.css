@@ -1,35 +1,15 @@
 @font-face {
-    font-family: 'ovoregular';
-    src: url('fonts/ovo-regular-webfont.woff') format('woff'),
-         url('fonts/ovo-regular-webfont.ttf') format('truetype'),
-         url('fonts/ovo-regular-webfont.svg#ovoregular') format('svg');
+    font-family: 'bree';
+    font-weight: 700;
+    src: url('fonts/BreeSerif-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Raleway Light'), local('Raleway-Light'),
-    url('../fonts/raleway-v11-latin_latin-ext-300.woff') format('woff'), /* Modern Browsers */
-    url('../fonts/raleway-v11-latin_latin-ext-300.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../fonts/raleway-v11-latin_latin-ext-300.svg#Raleway') format('svg'); /* Legacy iOS */
+  font-family: 'opensans';
+  src: url('fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;/
-  src: local('Raleway'), local('Raleway-Regular'),
-    url('../fonts/raleway-v11-latin_latin-ext-regular.woff') format('woff'), /* Modern Browsers */
-    url('../fonts/raleway-v11-latin_latin-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../fonts/raleway-v11-latin_latin-ext-regular.svg#Raleway') format('svg'); /* Legacy iOS */
-}
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Raleway Bold'), local('Raleway-Bold'),
-    url('../fonts/raleway-v11-latin_latin-ext-700.woff') format('woff'), /* Modern Browsers */
-    url('../fonts/raleway-v11-latin_latin-ext-700.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../fonts/raleway-v11-latin_latin-ext-700.svg#Raleway') format('svg'); /* Legacy iOS */
+  font-family: 'opensans';
+  src: url('fonts/OpenSans-Light.ttf') format('truetype');
 }
 
  /* -------------------------------------------------
@@ -87,14 +67,14 @@ header {
   margin-left: 10px;
 }
 .logo-name {
-  font-family: 'ovoregular';
+  font-family: 'bree';
   font-size: 2.6em;
   width: 100%;
   line-height: .8;
   color: #315879;
 }
 .slogan {
-  font-family: 'Raleway';
+  font-family: 'bree';
   width: 100%;
   font-size: .8em;
   color: rgba(39, 61, 80, 0.73);
@@ -105,7 +85,7 @@ nav ul {
   list-style: none;
 }
 nav li {
-  font-family: 'Raleway';
+  font-family: 'opensans';
   margin: 10px;
   padding: 5px;
 }
@@ -149,13 +129,13 @@ nav li a:focus::before {
   transition: background 0.3s ease-in;
   position: absolute;
   right: 285px;
-  top: 100px;
+  top: 90px;
 }
 .modal-btn {
   padding-bottom: 2px;
   margin-left: auto;
   border-bottom: 1px solid #000;
-  font-family: 'Raleway';
+  font-family: 'bree';
 }
 .modal-btn:hover {
   cursor: pointer;
@@ -163,7 +143,6 @@ nav li a:focus::before {
 .login-btn {
   align-self: center;
   border: none;
-  font-family: 'Raleway';
   background-color: #fff;
   cursor: pointer;
   height: 20px;
@@ -171,13 +150,13 @@ nav li a:focus::before {
 }
 .modal-content:before {
   position: absolute;
-  top: -20px;
+  top: -19px;
   right: 25px;
   width: 0;
   height: 0;
   border-radius: 4px;
   content: '';
-  border-bottom: solid 20px rgba(226, 226, 226, 0.42);;
+  border-bottom: solid 20px #f0f8ff;
   border-left: solid 10px transparent;
   border-right: solid 10px transparent;
 }
@@ -263,14 +242,13 @@ nav li a:focus::before {
   display: flex;
   flex-direction: column;
 }
-input[type='text'], input[type='password'], .login-btn {
+.login-form input[type='text'], input[type='password'], .login-btn {
   height: 40px;
   margin-top: 10px;
   border: none;
   border-radius: 4px;
-  font-family: 'Raleway';
-  font-size: 1em;
-  color: #315879
+  font-family: 'opensans';
+  color: #315879;
 }
 .login-form input[type='text'] {
   background: url(media/user.svg) no-repeat right 10px center #fff;
@@ -283,26 +261,26 @@ input[type='text'], input[type='password'], .login-btn {
   background-size: 20px;
   padding-left: 10px;
 }
-.login-btn {
+.login-form .login-btn {
   width: 100%;
   height: 40px;
   background-color: #315879;
   color: #fff;
   font-size: 1.2em;
 }
-input::placeholder {
+.login-form input::placeholder {
   font-size: 1.1em;
   color: rgba(49, 88, 121, 0.5);
 }
-textarea::placeholder {
+.login-form textarea::placeholder {
   color: rgba(49, 88, 121, 0.5);
   font-size: .9em;
 }
-textarea::-ms-placeholder {
+.login-form textarea::-ms-placeholder {
   color: rgba(49, 88, 121, 0.5);
   font-size: .9em;
 }
-input:-ms-input-placeholder {
+.login-form input:-ms-input-placeholder {
   font-size: 1.1em;
   color: rgba(49, 88, 121, 0.5);
 }
@@ -438,7 +416,7 @@ input:-ms-input-placeholder {
 
  /*SLIDES*/ 
 
-.slider-wrapper .slider>* {
+.slider-wrapper .slider > * {
   font-size: 1rem;
   display: inline-block;
   vertical-align: top;
@@ -459,16 +437,16 @@ input:-ms-input-placeholder {
   white-space: normal;
 }
 .slider div:first-of-type h1 {
-  font-family: 'ovoregular';
-  font-size: 3em;
+  font-family: 'bree';
+  font-size: 3.3em;
   line-height: 1.5;
   text-transform: uppercase;
   color: #0c3353;
   text-shadow: 0 1px 0px #2f255d;
 }
 .slider div:first-of-type h3 {
-  font-family: 'ovoregular';
-  font-size: 1.5em;
+  font-family: 'bree';
+  font-size: 1.8em;
   font-style: italic;
   color: #0c3353;
   text-shadow: 0 1px 0px #2f255d;
@@ -478,7 +456,8 @@ input:-ms-input-placeholder {
   width: 200px;
   margin: 70px 0 0;
   border: none;
-  font-family: 'Raleway';
+  font-family: 'opensans';
+  font-weight: 700;
   font-size: 1.1em;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -488,7 +467,7 @@ input:-ms-input-placeholder {
 }
 .front-btn:hover {
   color: #315879;
-  background-color: rgba(155, 255, 251, 0.56);
+  background-color: rgba(255, 255, 255, 0.58);
   border: 2px solid #4a87ba;
   font-weight: 700;
   transition: all .2s ease-in;
@@ -510,7 +489,7 @@ input:-ms-input-placeholder {
 .intro-home h1 {
   width: 100%;
   text-align: center;
-  font-family: 'Raleway';
+  font-family: 'bree';
   font-weight: 700;
   font-size: 1.5em;
   color: #315879;
@@ -525,8 +504,8 @@ input:-ms-input-placeholder {
   margin: 0 auto 20px;
 }
 .intro-home p {
-  font-family: 'ovoregular';
-  font-size: 1.1em;
+  font-family: 'opensans';
+  font-size: 1em;
   text-align: justify;
 }
 
@@ -550,15 +529,15 @@ input:-ms-input-placeholder {
   margin-right: 20px;
 }
 .about-author-name {
-  font-family: 'Raleway';
+  font-family: 'bree';
   font-weight: 700;
   font-size: 1.5em;
   color: #315879;
   line-height: 2;
 }
 .about-author-text {
-  font-family: 'ovoregular';
-  font-size: 1.1em;
+  font-family: 'opensans';
+  font-size: 1em;
 }
 
 /* -------------------------------------------------
@@ -592,7 +571,7 @@ input:-ms-input-placeholder {
 }
 .piesakies-home h1 {
   text-align: center;
-  font-family: 'Raleway';
+  font-family: 'bree';
   font-weight: 700;
   font-size: 1.5em;
   color: #315879;
@@ -603,33 +582,32 @@ input:-ms-input-placeholder {
   margin-bottom: 10px;
   padding-left: 20px;
   outline: none;
-  font-family: 'ovoregular';
-  font-size: 1.3em;
+  font-family: 'opensans';
+  font-size: 1.1em;
   color: rgba(62, 50, 95, 0.78);
   border: 1px solid #b2bbbc;
   border-radius: 4px;
-  transition: border .4s;
 }
-.piesakies-home input:focus {
-  border: 2px solid rgba(164, 147, 237, 0.57);
-  transition: border .4s;
+.piesakies-home input:focus, .contact-form textarea:focus, .contact-form input:focus {
+  border: 2px solid rgba(164, 147, 237, 0.3);
 }
-.piesakies-home input::placeholder {
+.piesakies-home input::placeholder, .contact-form textarea::placeholder, .contact-form input::placeholder {
   box-sizing: border-box;
 }
 .piesakies-home button {
   height: 50px;
   outline: none;
-  background-color: #315879;
+  background-color: #446CB3;
   color: rgb(255, 255, 255);
-  font-family: 'Raleway';
-  font-size: 1.3em;
+  font-family: 'opensans';
+  font-size: 1.1em;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-
-
+.piesakies-home button:hover {
+  background: #365690;
+}
 /* -------------------------------------------------
                     mus atbalsta
 -------------------------------------------------- */
@@ -643,7 +621,7 @@ input:-ms-input-placeholder {
 }
 .mus-atbalsta h1 {
   text-align: center;
-  font-family: 'Raleway';
+  font-family: 'bree';
   font-weight: 700;
   font-size: 1.5em;
   color: #315879;
@@ -688,7 +666,7 @@ hr:nth-of-type(4){
 .page-name {
   display: block;
   text-align: center;
-  font-family: 'ovoregular';
+  font-family: 'bree';
   font-size: 2.4em;
   margin: 30px 0;
   color: #1f486a;
@@ -709,8 +687,9 @@ hr:nth-of-type(4){
   right: 10%;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.88);
-  padding: 10px 20px 20px;
-  font-family: 'Raleway';
+  font-family: 'opensans';
+  font-weight: 700;
+  white-space: nowrap;
 }
 .social-icons {
   display: flex;
@@ -759,44 +738,53 @@ hr:nth-of-type(4){
   border-radius: 4px;
   background-color: #f0f8ff;
   text-align: center;
+  border: 1px solid rgba(168, 168, 227, 0.1);
 }
 .form-field h2 {
   display: inline-block;
   margin: 30px 0;
-  font-family: 'ovoregular';
+  font-family: 'bree';
   font-size: 2em;
   color: #1f486a;
 }
 .contact-form {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
-  text-align: center;
+  padding: 0 5%;
+}
+.contact-fprm-input-wrap {
+  width: 100%;
 }
 .contact-form input {
-  width: 43%;
+  width: 46.5%; /* this is wrong, but it works */
+  height: 40px;
   padding-left: 10px;
+  border: 1px solid rgba(178, 187, 188, 0.63);
+  border-radius: 4px;
+  font-family: 'opensans';
+  font-size: 1em;
+  color: #315879;
 }
 .contact-form input:first-of-type {
-  margin-left: 5%;
+  margin-right: 3%;
 }
 .contact-form input:last-of-type {
-  margin-right: 5%;
+  margin-left: 3%;
 }
 .contact-form textarea {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   border-radius: 4px;
   height: 150px;
   margin-top: 30px;
   padding: 10px;
   border: none;
-  font-family: 'Raleway';
-  font-size: 1.2em;
+  font-family: 'opensans';
   color: #315879;
-  resize: none;
+  border: 1px solid rgba(178, 187, 188, 0.63);
+  border-radius: 4px;
 }
+
  /* varbūt jāsamazina placeholder opacity, kad kursors ielikts input un textarea laukos */
 
 .submit-form-btn {
@@ -808,12 +796,12 @@ hr:nth-of-type(4){
   border-radius: 4px;
   border: none;
   font-size: 1.1em;
-  font-family: 'Raleway';
+  font-family: 'opensans';
   height: 40px;
+  letter-spacing: 1px;
 }
 
 .submit-form-btn:hover {
-  color: #fff;
   background: #365690;
 }
 
@@ -830,7 +818,6 @@ footer {
   margin: 0 auto 20px;
   width: 90%;
   max-width: 1200px;
-  font-family: 'Raleway';
 }
 .footer-left {
   width: 20%;
@@ -847,7 +834,8 @@ footer .slogan {
 .copr {
   display: inline-block;
   font-size: .8em;
-  margin-top: 7px;
+  font-family: 'bree';
+  margin-top: 15px;
 }
 footer nav ul {
   flex-direction: column;
@@ -865,13 +853,14 @@ footer nav li a::before {
 .footer-middle {
   width: 30%;
   white-space: nowrap;
+  font-family: 'opensans';
 }
 .footer-middle ul, .map-contacts ul {
  list-style: none;
 }
 .footer-middle ul li, .map-contacts > ul li {
   background: url(media/password.svg) no-repeat left center;
-  padding-left: 25px;
+  padding-left: 30px;
   margin: 10px 0;
 }
 .footer-middle ul li:first-child, .map-contacts > ul li:first-child {
@@ -887,13 +876,16 @@ footer nav li a::before {
   width: 30%;
 }
 .moto {
-  font-family: 'ovoregular';
-  font-size: 1.2em;
+  font-family: 'opensans';
+  font-size: 1.1em;
   margin-bottom: 10px;
+  font-style: italic;
 }
 footer figcaption {
   float: right;
   margin-top: 10px;
+  font-family: 'bree';
+  font-style: italic;
 }
 
 /* -------------------------------------------------
@@ -908,9 +900,6 @@ footer figcaption {
   
   header {
     flex-wrap: wrap;
-  }
-  .logo-field {
-    
   }
   .logo {
     width: 60px;
@@ -932,14 +921,14 @@ footer figcaption {
     justify-content: space-between;
   }
   header nav li {
-    font-family: 'Raleway';
+    font-family: 'opensans';
     margin: 10px;
     padding: 5px;
   }
   
   .modal-btn { 
     position: absolute;
-    top: 40px;
+    top: 35px;
     right: 0;
   }
   
@@ -1019,15 +1008,29 @@ footer figcaption {
 }
 @media (max-width: 610px) {
   header nav {
-    width: 100%;
+    margin-top: 20px;
   }
   header nav ul {
-    width: 100%;
     /* IE */
     width: fit-content;
     margin: 0 auto;
+    width: 100%;
     flex-direction: column;
     justify-content: space-between;
+    background-color: rgba(49, 88, 121, 0.88);
+    border-radius: 4px;
+  }
+  header nav ul li {
+    margin: 0;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 1px solid rgba(157, 157, 157, 0.5);
+  }
+  header nav ul li:hover, header nav ul li:active {
+    background-color: rgb(49, 88, 121);
+  }
+  header nav a, header nav a:hover {
+    color: #fff;
   }
   nav li a::before {
     display: none;
@@ -1035,8 +1038,35 @@ footer figcaption {
   .slider .slide-content-wrap {
     width: 90%;
   }
+  .slider-wrapper {
+    height: auto;
+  }
+  .slider-wrapper h1 {
+    margin-top: 40px;
+  }
   .front-btn {
-    margin: 20px auto 0;
+    margin: 40px auto;
+  }
+  
+  .form-field {
+    width: 90%;
+  }
+  .contact-form input {
+    width: 100%;
+    margin: 0;
+  }
+  .contact-form input:first-of-type {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .contact-form input:last-of-type {
+    margin-left: 0;
+  }
+  .map-contacts {
+    position: absolute;
+    width: auto;
+    top: 70%;
+    right: 0;
   }
 }
 

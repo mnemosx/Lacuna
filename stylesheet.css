@@ -757,7 +757,7 @@ hr:nth-of-type(4){
   width: 100%;
 }
 .contact-form input {
-  width: 46.5%; /* this is wrong, but it works */
+  width: 46.4%; /* this is wrong, but it works */
   height: 40px;
   padding-left: 10px;
   border: 1px solid rgba(178, 187, 188, 0.63);
@@ -1031,6 +1031,8 @@ footer figcaption {
   }
   header nav a, header nav a:hover {
     color: #fff;
+    display: block;
+    width: 100%;
   }
   nav li a::before {
     display: none;
@@ -1065,8 +1067,10 @@ footer figcaption {
   .map-contacts {
     position: absolute;
     width: auto;
-    top: 70%;
+    top: auto;
+    bottom: 0;
     right: 0;
+    left: 0;
   }
 }
 

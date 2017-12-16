@@ -77,6 +77,7 @@ header {
   font-family: 'bree';
   width: 100%;
   font-size: .8em;
+  color: rgb(39, 61, 80);
   color: rgba(39, 61, 80, 0.73);
 }
 nav ul {
@@ -95,6 +96,7 @@ nav li a {
   color: #395d7e;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
   transition: color 0.3s;
 }
 
@@ -108,9 +110,12 @@ nav li a::before {
   font-size: 1.2em;
   -webkit-transition: text-shadow 0.3s, color 0.3s;
   -moz-transition: text-shadow 0.3s, color 0.3s;
+  -o-transition: text-shadow 0.3s, color 0.3s;
   transition: text-shadow 0.3s, color 0.3s;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -119,6 +124,7 @@ nav li a:hover {
 }
 nav li a:hover::before,
 nav li a:focus::before {
+  color: rgb(140, 144, 229);
   color: rgba(140, 144, 229, 0.58);
   text-shadow: 10px 0 rgba(140, 144, 229, 0.58), -10px 0 rgba(140, 144, 229, 0.58);
 }
@@ -308,7 +314,7 @@ nav li a:focus::before {
   transition: 0.8s;
   background: url(media/Slider/slider-1.jpg) no-repeat center;
   background-size: cover;
-  box-shadow:inset 0 0 0 2000px rgba(155, 255, 251, 0.51);
+  box-shadow:inset 0 0 0 3000px rgba(155, 255, 251, 0.51);
 }
 
 /* PREV/NEXT, CONTAINERS & ANCHORS */
@@ -442,7 +448,7 @@ nav li a:focus::before {
   line-height: 1.5;
   text-transform: uppercase;
   color: #0c3353;
-  text-shadow: 0 1px 0px #2f255d;
+  text-shadow: 0 1px 0 #2f255d;
 }
 .slider div:first-of-type h3 {
   font-family: 'bree';
@@ -584,6 +590,7 @@ nav li a:focus::before {
   outline: none;
   font-family: 'opensans';
   font-size: 1.1em;
+  color: rgb(62, 50, 95);
   color: rgba(62, 50, 95, 0.78);
   border: 1px solid #b2bbbc;
   border-radius: 4px;
@@ -634,7 +641,7 @@ nav li a:focus::before {
 }
 
 
-hr {
+.home-hr {
   display: block;
   position: relative;
   padding: 0;
@@ -647,21 +654,93 @@ hr {
   border: none;
   border-top: 7px solid #315879;
 }
-hr:nth-of-type(2){
+.home-hr:nth-of-type(2){
   margin-bottom: 0;
 }
-hr:nth-of-type(3){
+.home-hr:nth-of-type(3){
   margin-top: 0;
 }
-hr:nth-of-type(4){
+.home-hr:nth-of-type(4){
   margin-bottom: 40px;
 }
 
+/* --------------------------------------------------
+   --------------------------------------------------
+                    PAKALPOJUMI
+   --------------------------------------------------
+   -------------------------------------------------- */
+
+.pakalpojumi-flex-wrap {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.pakalpojums-tile {
+  width: 31%;
+  min-width: 300px;
+  margin: 10px;
+  overflow: hidden; /* crops images */
+  background-color: #e6f3ff;
+  border-radius: 4px;
+  position: relative;
+}
+.pakalpojums-tile img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+.pakalpojums-tile h1 {
+  position: absolute;
+  top: 177px;
+  background: rgba(0, 0, 0, 0.46);
+  padding: 5px 10px;
+  color: #ffebeb;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'bree';
+  font-size: 1.5em;
+}
+.pakalpojums-tile p {
+  font-family: 'opensans';
+  font-size: 1em;
+  padding: 10px;
+}
+
+
+/* --------------------------------------------------
+   --------------------------------------------------
+                   ATSSAUKSMES
+   --------------------------------------------------
+   -------------------------------------------------- */
+
+.atsauksmes-main-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.atsauksme-name {
+  background-color: #e6f3ff;
+  color: #9c90b9;
+  line-height: 3;
+  padding-left: 20px;
+  font-family: 'bree';
+  font-size: 1.1em;
+}
+.atsauksme-text {
+  margin: 10px 0 20px 10px;
+  font-family: 'opensans';
+  font-size: .9em;
+  line-height: 1.7;
+}
 /* -------------------------------------------------
-  --------------------------------------------------
+   --------------------------------------------------
                       KONTAKTI
-  --------------------------------------------------
-  -------------------------------------------------- */
+   --------------------------------------------------
+   -------------------------------------------------- */
 
 .page-name {
   display: block;
@@ -893,7 +972,11 @@ footer figcaption {
                   MEDIA QUERIES
   --------------------------------------------------
   -------------------------------------------------- */
-
+@media (max-width: 1083px) {
+  .pakalpojums-tile {
+    width: 46%;
+  }
+}
 @media (max-width: 1000px) {
   
   /* HEADER */
@@ -985,6 +1068,12 @@ footer figcaption {
   }
 }
 
+@media (max-width: 730px) {
+  .pakalpojums-tile {
+    width: 100%;
+  }
+}
+
 @media (max-width: 700px) {
   .intro-home div {
     width: 80%;
@@ -1004,6 +1093,9 @@ footer figcaption {
   .about-author-picture {
     max-height: 200px;
     margin-right: 0;
+  }
+  .about-author-text {
+    text-align: justify;
   }
 }
 @media (max-width: 610px) {
@@ -1072,29 +1164,8 @@ footer figcaption {
     right: 0;
     left: 0;
   }
+  
+  .pakalpojums-tile {
+    margin: 10px 0;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

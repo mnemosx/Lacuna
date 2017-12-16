@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Lacuna</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-field">
+        <img class="logo" src='media/logo.svg' alt="Lacuna Logo">
+        <div class="logo-text">
+          <h1 class="logo-name">Lacuna</h1>
+          <p class="slogan">Beauty Management</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href='index.html'>Sākums</a></li>
+          <li><a href='par-mums.html'>Par mums</a></li>
+          <li><a href='pakalpojumi.html'>Pakalpojumi</a></li>
+          <li><a href='atsauksmes.html'>Atsauksmes</a></li>
+          <li><a href='kontakti.html'>Kontakti</a></li>
+        </ul>
+      </nav>
+
+      <label class="modal-btn" for="modal-toggle">Ienākt</label> 
+      <div class="modal-container">
+        <input id="modal-toggle" type="checkbox">
+        <label class="modal-backdrop" for="modal-toggle"></label>
+        <div class="modal-content">
+          <label class="modal-close" for="modal-toggle">&#x2715;</label>
+          <div class="login-form">
+            <input type="text" id="username" name="username" placeholder="Lietotājs">
+            <input type="password" id="password" name="password" placeholder="Parole">
+            <button class="login-btn">Ienākt</button>
+          </div>
+        </div>          
+      </div>  
+    </header>
+    <main>
+      <h1 class="page-name">Pakalpojumi</h1>
+      <div class="pakalpojumi-flex-wrap">
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-1-facelift.jpg" alt="">
+        <h1>Sejas plastika</h1>
+        <p>Sejas plastiskās operācijas ļauj novērst krunciņas, grumbas un rievas uz pieres, virs lūpu kaktiņiem un ap acīm, kas radušās ādas novecošanas rezultātā, tā ir iespēja atjaunot sejas un kakla ādas tvirtumu un jaunību. Sejas plastiskās operācijas ietver deguna, ausu, lūpu formas, kakla ādas korekciju un acu kosmētisko korekciju.</p>
+      </div>
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-2-breast.jpg" alt="">
+        <h1>Krūšu korekcijas</h1>
+        <p>Efektīvākais veids, kā uzlabot krūšu formu, iegūt vēlamo krūšu apjomu. Pakalpojums piemērots pēc bērna barošanas, svara zuduma vai novecošanas gadījumos, kā arī, lai novērstu traumu vai slimību rezultātā iegūtus defektus vai jebkādas anatomiskas īpatnības. Mūsu speciālisti ieteiks piemērotākās krūšu operāciju metodes un implantu veidus.</p>
+      </div>
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-3-arm.jpg" alt="">
+        <h1>Rokas operācijas</h1>
+        <p>Viena no smalkākajām plastiskās ķirurģijas specialitātēm, tāpēc rokas operācijās tiek izmantota mikroķirurģijas metode, kad operācija tiek veikta optiskā palielinājumā ar īpaši smalkiem instrumentiem, kā arī operācijas tiek veiktas vietējā vai vispārējā narkozē. Iespējams novērst iedzimtus defektus vai attīstības anomālijas, slimību vai traumu izraisītus rokas funkciju traucējumus, bojājumus un apdegumu sekas. Atjaunojam arī plaukstas jutību un funkcijas.</p>
+      </div>
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-4-lipo.jpg" alt="">
+        <h1>Tauku atsūkšana</h1>
+        <p>Tauku atsūkšanas operācija jeb lipektomija kā formu korekcijas metode tiek veikta, lai ātri un efektīvi atbrīvotos no liekā tauku slāņa augšstilbu sānos, apakšstilbu un potīšu rajonā, uz vēdera un gurniem, kā arī pazodē. Operācija tiek veikta vietējā vai vispārējā narkozē un ir nesāpīga. Pēc operācijas stacionārā mediķu uzraudzībā jāuzturas 1 diennakti.</p>
+      </div>
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-5-scar.jpg" alt="">
+        <h1>Kosmētiskās korekcijas</h1>
+        <p>Kosmētiskās korekcijas kā rētu korekcija tiek veikta, lai mazinātu rētu radītos kosmētiskos defektus, padarītu tās mazāk pamanāmas. Rētu kosmētiskās korekcijas veic gan ar injekcijām, gan zāļu kompresēm, gan ķirurģiskām metodēm. Savukārt dzimumzīmju noņemšana novērš dzimumzīmju kosmētiskos defektus un likvidē veselībai bīstamas dzimumzīmes. Pēc operācijas āda pilnībā sadzīst 1-2 nedēļu laikā, neatstājot rētas.</p>
+      </div>
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-6-belly.jpg" alt="">
+        <h1>Vēdera plastika</h1>
+        <p>Vēdera plastiskās operācijas uzlabo vēdera, vēdera lejasdaļas un vidukļa formas, likvidē lieko tauku slāni,liekās ādas krokas, novērš vizuālos defektus pēc grūtniecības. Operācijas tiek veiktas vispārējā narkozē un ir nesāpīgas une efekts saglabājas 7-10 gadus.</p>
+      </div>
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-7-legs.jpg" alt="">
+        <h1>Kāju formas korekcija</h1>
+        <p>Kāju formas korekcijas uzlabo kāju formu un izskatu, novērstu traumu radītus bojājumus vai iedzimtus defektus. Iespējams arī samazināt kāju apkārtmēru potītēs, ceļgalos vai augšstilbos, piešķirt muskuļiem vēlamo formu. Efekts pēc operācijas saglabājas visa mūža garumā. Brūces pēc operācijas sadzīst 1-2 nedēļu laikā. Svarīgi pirmo mēnesi ierobežot fiziskās aktivitātes, kas noslogo kājas.</p>
+      </div>
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-8-fat.jpg" alt="">
+        <h1>Tauku transplantācija</h1>
+        <p>Tauku šūnu transplantācija ļāuj ātri un efektīvi izlīdzināt novecojušas ādas krunciņas, grumbas un rievas, jo taukaudi ir pilnīgi dabīgs mīksto audu aizpildīšanas materiāls, kas izlīdzina arī dziļākas ādas rievas un rētas. Tauku šūnas paņem no vienas ķermeņa zonas un injicē citā. Iepriekšēja pārbaude nav nepieciešama, jo tauki iegūti no klienta paša ķermeņa. Procedūra ilgst tikai 1 stundu, pēc tās klients var doties mājās.</p>
+      </div>
+      <div class="pakalpojums-tile">
+        <img src="media/pakalpojumi-thumbnails/pak-9-botox.jpg" alt="">
+        <h1>Botulīna injekcijas</h1>
+        <p>Pēc botulīna toksīna ievadīšanas āda kļūst gluda un grumbas izlīdzinās un saglabājas dabiska sejas izteiksme. Procedūrā izmantotā mikroadata ir ļoti smalka, tās radītās sāpes ir salīdzināmas ar insekta kodumu. Procedūra ilgst 20-30 minūtes, un uzreiz pēc injekcijas klients var doties mājās vai turpināt savus dienas darbus, bet iedarbība saglabājas 6-12 mēnešus.</p>
+      </div>
+      </div>
+      <hr class="home-hr">
+    </main>
+
+    <footer>
+      <div class="footer-left">
+        <div class="logo-field">
+          <img class="logo" src='media/logo.svg' alt="Lacuna Logo">
+          <div class="logo-text">
+            <h1 class="logo-name">Lacuna</h1>
+            <p class="slogan">Memory Management</p>
+          </div>
+        </div>
+        <span class="copr">Lacuna, Inc. &copy; 2017</span>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href='index.html'>Sākums</a></li>
+          <li><a href='par-mums.html'>Par mums</a></li>
+          <li><a href='ka-tas-strada.html'>Kā tas strādā?</a></li>
+          <li><a href='atsauksmes.html'>Atsauksmes</a></li>
+          <li><a href='kontakti.html'>Kontakti</a></li>
+        </ul>
+      </nav>
+      <div class="footer-middle">
+        <ul>
+          <li><a href="https://www.google.lv/maps/place/210+Grand+St,+New+York,+NY+10013,+USA/@40.7191618,-73.998322,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598866960223:0x394ef36d18e18c98!8m2!3d40.7191618!4d-73.9961333?hl=en" target="_blank">210 E Grand St, New York, NY 10019</a></li>
+          <li><a href="tel:202-555-0182">202-555-0182</a></li>
+          <li><a href="https://lacunainc.com">www.lacunainc.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <blockquote class="moto">Blessed are the forgetful, for they get the better even of their blunders.</blockquote>
+        <figcaption>- Friedrich Nietzsche</figcaption>
+      </div>
+    </footer>
+  </body>
+
+</html>

@@ -345,8 +345,6 @@ nav li a:focus::before {
 
 .slider-wrapper .prevNext>div+div {
   visibility: hidden;
-  
-  Hide all but first P/N container 
 }
 
 .slider-wrapper .prevNext a {
@@ -390,8 +388,6 @@ nav li a:focus::before {
 
 .slider-wrapper .bullets > a+a {
   background: rgba(255,255,255,0.5); 
-  
-  Dim all but first 
 }
 
 .slider-wrapper .bullets > a:hover {
@@ -1017,6 +1013,7 @@ footer figcaption {
                   MEDIA QUERIES
   --------------------------------------------------
   -------------------------------------------------- */
+
 @media (max-width: 1083px) {
   .pakalpojums-tile {
     width: 46%;
